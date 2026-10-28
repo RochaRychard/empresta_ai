@@ -1,3 +1,4 @@
+import 'package:empresta_ai_app/theme/tema.dart';
 import 'package:flutter/material.dart';
 
 class EmprestaAiApp extends StatelessWidget {
@@ -7,8 +8,18 @@ class EmprestaAiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Empresta aí',
-      home: Scaffold(body: Text("Empresta aí em desenvolvimento!"),
+      debugShowCheckedModeBanner: false,
+      theme: TemaEmprestaAi.claro(),
+      darkTheme: TemaEmprestaAi.escuro(),
+      home: Scaffold(
+        body: Center(
+        child: FilledButton(
+          onPressed: () {},
+          child:
+        Text("Botão padrão do Empresta Ai")
+        )
       )
+    ),
     );
   }
 }
