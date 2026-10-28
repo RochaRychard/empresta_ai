@@ -1,6 +1,7 @@
-# empresta_ai_app
+# Empresta aí
 
-A new Flutter project.
+
+Aplicativo de empréstimo de objetos entre vizinhos do condomínio, desenvolvimento em Flutter na unidade 03 do curso de desenvolvedor mobile.
 
 ## Getting Started
 
