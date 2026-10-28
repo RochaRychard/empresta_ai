@@ -30,7 +30,7 @@ class TemaEmprestaAi {
       ),
       inputDecorationTheme: InputDecorationTheme(border: OutlineInputBorder()),
 
-      cardTheme: CardTheme(margin: EdgeInsets.zero),
+      cardTheme: CardThemeData(margin: EdgeInsets.zero),
     );
   }
 }
