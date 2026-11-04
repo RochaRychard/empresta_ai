@@ -27,7 +27,7 @@ class _LoginViewState extends State<LoginView>{
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Icon(Icons.volunteer_activism, size: 72, color: cores.primary),
-              SizedBox(height: TemaEmprestaAi.espacoM )
+              SizedBox(height: TemaEmprestaAi.espacoM ),
               Text("Empresta aí", textAlign: TextAlign.center,
               style: textos.headlineLarge?.copyWith(
               fontWeight: FontWeight.w600,
