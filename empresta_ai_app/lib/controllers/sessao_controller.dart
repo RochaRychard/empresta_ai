@@ -5,11 +5,15 @@ class SessaoController extends ChangeNotifier{
   static final _formatoSenha = RegExp(r'^\d{4}');
 
   String? _apartamento = "";
+  String? get apartamento => _apartamento;
+  bool get logado => _apartamento != null;
+
+  FormFieldValidator<String>? get validarSenha => null;
 
 
   //#region validações apartamento e senha
   //Retorna mensagem de erro se apartamento for null
-  String? validarApartamento(String apto){
+  String? validarApartamento(String? apto){
     if(apto == null || apto.trim().isEmpty){
       return "Informe o bloco e apartamento";
     }
