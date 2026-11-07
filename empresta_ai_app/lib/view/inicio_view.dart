@@ -1,8 +1,11 @@
-import 'package:empresta_ai_app/controllers/itens_controller.dart';
-import 'package:empresta_ai_app/controllers/sessao_controller.dart';
-import 'package:empresta_ai_app/view/perfil_view.dart';
 import 'package:flutter/material.dart';
 
+import '../controllers/itens_controller.dart';
+import '../controllers/sessao_controller.dart';
+import 'itens_view.dart';
+import 'perfil_view.dart';
+
+/// Estrutura principal com navegação inferior (tab bar) — Aula 11.
 class InicioView extends StatefulWidget {
   const InicioView({super.key, required this.sessao, required this.itens});
 
@@ -18,9 +21,9 @@ class _InicioViewState extends State<InicioView> {
 
   @override
   Widget build(BuildContext context) {
-    // As abas 1 e 2 ainda são provisórias: chegam nas issues #6 e #8.
+    // A aba 2 ainda é provisória: chega na issue #8.
     final abas = [
-      const Center(child: Text('Lista de itens: chega na issue #6')),
+      ItensView(controller: widget.itens),
       const Center(child: Text('Meus pedidos: chega na issue #8')),
       PerfilView(sessao: widget.sessao),
     ];
@@ -31,14 +34,15 @@ class _InicioViewState extends State<InicioView> {
         selectedIndex: _abaAtual,
         onDestinationSelected: (i) => setState(() => _abaAtual = i),
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.search), label: 'Itens'),
-
+          NavigationDestination(
+            icon: Icon(Icons.search),
+            label: 'Itens',
+          ),
           NavigationDestination(
             icon: Icon(Icons.inventory_2_outlined),
             selectedIcon: Icon(Icons.inventory_2),
-            label: 'Meus Pedidos',
+            label: 'Meus pedidos',
           ),
-
           NavigationDestination(
             icon: Icon(Icons.person_outline),
             selectedIcon: Icon(Icons.person),
