@@ -1,9 +1,11 @@
+import 'package:empresta_ai_app/theme/tema.dart';
+import 'package:empresta_ai_app/widgets/icone_categoria.dart';
 import 'package:flutter/material.dart';
 
 import '../controllers/itens_controller.dart';
 import '../models/item.dart';
-import '../tema/tema.dart';
-import '../widgets/icone_categoria.dart';
+
+
 
 /// Detalhe do item com ação principal e feedback ao usuário (Aula 12).
 class ItemDetalheView extends StatelessWidget {
@@ -35,7 +37,7 @@ class ItemDetalheView extends StatelessWidget {
     );
     if (confirmou != true || !context.mounted) return;
 
-    final deuCerto = controller.pedir(item);
+    final deuCerto = controller.pedirEmprestado(item);
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(deuCerto
